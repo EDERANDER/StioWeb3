@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            #observaciones {
+                width: 100%;
+                height: 100px; /* Ajusta el alto según tus necesidades */
+                font-size: 10px; /* Ajusta el tamaño de fuente según tus necesidades */
+            }
+        }
+        #observaciones {
+            height: 100px; /* Ajusta la altura según sea necesario */
+            overflow: hidden; /* Oculta el desbordamiento */
+            resize: none; /* Desactiva el redimensionamiento del textarea */
+            box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
+        }
+         
+        .sun-text {
+            font-size: 36px; /* Tamaño del texto */
+            font-weight: bold; /* Negrita */
+            color: #ffcc00; /* Color dorado */
+            margin-top: 5%; /* Margen superior */
+            animation: shine 1s infinite; /* Animación */
+        }
+
+        @keyframes shine {
+            0%, 100% {
+                text-shadow: 0 0 20px #ff3131, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00, 0 0 60px #ff3131;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff3131, 0 0 20px #dfdf42, 0 0 30px #dfdf42, 0 0 40px #dfdf42, 0 0 50px #ff3131;
+            }
+        }
+        .sun-text1 {
+            font-size: 36px; /* Tamaño del texto */
+            font-weight: bold; /* Negrita */
+            color: #054f6d; /* Color dorado */
+            margin-top: 5%; /* Margen superior */
+        }
+        .sun-text2 {
+            font-size: 36px; /* Tamaño del texto */
+            font-weight: bold; /* Negrita */
+            color: #87CEEB; /* Color dorado */
+            margin-top: 5%; /* Margen superior */
+        }        
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3 class="sun-text1" style="text-align: center;">Formulario</h3>
+                <hr>
+                <form id="form">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre Operador</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="placa" class="form-label">Placa</label>
+                            <input type="text" class="form-control" id="placa">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="horometro" class="form-label">Código</label>
+                            <input type="text" class="form-control" id="horometro">
+                        </div>
+                    </div>
+
+
+                    <h4 class="sun-text1">Documentos</h4>
+                    <div style="text-align: left;">
+                        <label style="font-weight: bold;">1 Revisión técnica:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="revision_tecnica" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="revision_tecnica" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="revision_tecnica" value="No Aplica"> No Aplica
+                        </div>
+                    </div>
+
+
+                    
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">2 Estructura general del cargador frontal:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="estructura_general" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="estructura_general" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="estructura_general" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">3 Neumáticos traseros:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="neumaticos_traseros" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="neumaticos_traseros" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="neumaticos_traseros" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">4 Neumáticos delanteros:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="neumaticos_delanteros" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="neumaticos_delanteros" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="neumaticos_delanteros" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">5 Cilindro de levante:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cilindro_levante" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cilindro_levante" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="cilindro_levante" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">6 Cilindros de articulación:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cilindros_articulacion" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cilindros_articulacion" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="cilindros_articulacion" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">7 Pala de carga:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="pala_carga" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="pala_carga" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="pala_carga" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">8 Comandos:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="comandos" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="comandos" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="comandos" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">9 Pasadores cilindros:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="pasadores_cilindros" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="pasadores_cilindros" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="pasadores_cilindros" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">10 Flexibles:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="flexibles" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="flexibles" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="flexibles" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">11 Cañerías:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="canerias" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="canerias" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="canerias" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">12 Freno de estacionamiento:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="freno_estacionamiento" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="freno_estacionamiento" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="freno_estacionamiento" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">13 Sistema de frenos:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="sistema_frenos" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="sistema_frenos" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="sistema_frenos" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">14 Enfriador de aceite:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="enfriador_aceite" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="enfriador_aceite" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="enfriador_aceite" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">15 Espejos:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="espejos" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="espejos" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="espejos" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">16 Cabina:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cabina" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cabina" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="cabina" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">17 Alarma de retroceso:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="alarma_retroceso" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="alarma_retroceso" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="alarma_retroceso" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">18 Luces:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="luces" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="luces" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="luces" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">19 Bocina:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bocina" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bocina" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="bocina" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">20 Baliza:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="baliza" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="baliza" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="baliza" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">21 Bloqueador sistema hidráulico:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bloqueador_sistema_hidraulico" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bloqueador_sistema_hidraulico" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="bloqueador_sistema_hidraulico" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">22 Motor:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="motor" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="motor" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="motor" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">23 Radiador:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="radiador" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="radiador" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="radiador" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">24 Mangueras:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="mangueras" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="mangueras" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="mangueras" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">25 Correas:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="correas" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="correas" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="correas" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">26 Sistema eléctrico:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="sistema_electrico" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="sistema_electrico" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="sistema_electrico" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">27 Reloj de temperatura:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="reloj_temperatura" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="reloj_temperatura" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="reloj_temperatura" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">28 Marcador de aceite:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="marcador_aceite" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="marcador_aceite" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="marcador_aceite" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">29 Marcador de petróleo:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="marcador_petroleo" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="marcador_petroleo" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="marcador_petroleo" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">30 Cinturón de seguridad:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cinturon_seguridad" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="cinturon_seguridad" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="cinturon_seguridad" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">31 Seguro de cilindro de levante pala:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="seguro_cilindro_levante" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="seguro_cilindro_levante" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="seguro_cilindro_levante" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">32 Rueda de repuesto:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="rueda_repuesto" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="rueda_repuesto" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="rueda_repuesto" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">33 Tubo de escape:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="tubo_escape" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="tubo_escape" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="tubo_escape" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">34 Batería y terminales:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bateria_terminales" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="bateria_terminales" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="bateria_terminales" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      <div style="text-align: left;">
+                        <label style="font-weight: bold;">35 Asiento:</label>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="asiento" value="Bueno"> Bueno
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                          <input type="radio" name="asiento" value="Malo"> Malo
+                        </div>
+                        <div>
+                          <input type="radio" name="asiento" value="No Aplica"> No Aplica
+                        </div>
+                      </div>
+                      
+                      
+                      
+                      
+                      
+
+                    
+
+                    
+                    <br><br>
+                    
+
+
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="observaciones" class="form-label">Observaciones (máximo 3 filas)</label>
+                            <textarea id="observaciones" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    
+                    
+            
+                    <button type="submit" class="btn btn-primary mb-4" style="background-color: firebrick;">Generar PDF</button>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
