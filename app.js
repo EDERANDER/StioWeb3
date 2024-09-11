@@ -568,7 +568,10 @@ window.addEventListener('load', async () => {
             ruedaRepuestoShort,
             tuboEscapeShort,
             bateriaTerminalesShort,
-            asientoShort
+            asientoShort,
+
+            nombreJefe,
+            dniJefe
         );
         
         
@@ -614,7 +617,9 @@ async function generatePDF(
     ruedaRepuesto,
     tuboEscape,
     bateriaTerminales,
-    asiento
+    asiento,
+    nombreJefe,
+    dniJefe
 ) {
     // Cargar la imagen JPG
     const image = await loadImage("formulario.jpg");
@@ -651,6 +656,8 @@ async function generatePDF(
     pdf.text(placa, 160, 144);
     pdf.text(horometro, 375, 144);
     pdf.text(observaciones,50, 620);
+
+    
 
 
 
@@ -972,6 +979,10 @@ async function generatePDF(
     } else if (asiento === 'NA') {
         pdf.text('A', 513, 316);
     }
+
+
+    pdf.text(nombreJefe, 50, 620);
+    pdf.text(dniJefe,400, 370);
     //main end
 
     pdf.setFillColor(0,0,0);
