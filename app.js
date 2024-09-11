@@ -31,6 +31,9 @@ window.addEventListener('load', async () => {
         let horometro = document.getElementById('horometro').value;
         let observaciones = document.getElementById('observaciones').value;
 
+        let nombreJefe = document.getElementById('nombreJefe').value;
+        let dniJefe = document.getElementById('dniJefe').value;
+
          // Obtener la opción seleccionada de "Revisión técnica"
          let revisionTecnica = document.querySelector('input[name="revision_tecnica"]:checked').value;
          let revisionTecnicaShort = '';
