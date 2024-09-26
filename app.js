@@ -530,6 +530,220 @@ window.addEventListener('load', async () => {
                  asientoShort = 'NA';
                  break;
          }
+
+
+         //lo que falta completar
+
+        // Obtener la opción seleccionada de "Extintor 8kg minimo"
+        let extintor = document.querySelector('input[name="extintor"]:checked').value;
+        let extintorShort = '';
+        switch (extintor) {
+            case 'Bueno':
+                extintorShort = 'B';
+                break;
+            case 'Malo':
+                extintorShort = 'M';
+                break;
+            case 'No Aplica':
+                extintorShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Juego de llaves"
+        let juegoLlaves = document.querySelector('input[name="juego_llaves"]:checked').value;
+        let juegoLlavesShort = '';
+        switch (juegoLlaves) {
+            case 'Bueno':
+                juegoLlavesShort = 'B';
+                break;
+            case 'Malo':
+                juegoLlavesShort = 'M';
+                break;
+            case 'No Aplica':
+                juegoLlavesShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Faja remolcadora"
+        let fajaRemolcadora = document.querySelector('input[name="faja_remolcadora"]:checked').value;
+        let fajaRemolcadoraShort = '';
+        switch (fajaRemolcadora) {
+            case 'Bueno':
+                fajaRemolcadoraShort = 'B';
+                break;
+            case 'Malo':
+                fajaRemolcadoraShort = 'M';
+                break;
+            case 'No Aplica':
+                fajaRemolcadoraShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Circulina"
+        let circulina = document.querySelector('input[name="circulina"]:checked').value;
+        let circulinaShort = '';
+        switch (circulina) {
+            case 'Bueno':
+                circulinaShort = 'B';
+                break;
+            case 'Malo':
+                circulinaShort = 'M';
+                break;
+            case 'No Aplica':
+                circulinaShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Triángulo de Seguridad"
+        let trianguloSeguridad = document.querySelector('input[name="triangulo_seguridad"]:checked').value;
+        let trianguloSeguridadShort = '';
+        switch (trianguloSeguridad) {
+            case 'Bueno':
+                trianguloSeguridadShort = 'B';
+                break;
+            case 'Malo':
+                trianguloSeguridadShort = 'M';
+                break;
+            case 'No Aplica':
+                trianguloSeguridadShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Cinta reflectiva"
+        let cintaReflectiva = document.querySelector('input[name="cinta_reflectiva"]:checked').value;
+        let cintaReflectivaShort = '';
+        switch (cintaReflectiva) {
+            case 'Bueno':
+                cintaReflectivaShort = 'B';
+                break;
+            case 'Malo':
+                cintaReflectivaShort = 'M';
+                break;
+            case 'No Aplica':
+                cintaReflectivaShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Pico"
+        let pico = document.querySelector('input[name="pico"]:checked').value;
+        let picoShort = '';
+        switch (pico) {
+            case 'Bueno':
+                picoShort = 'B';
+                break;
+            case 'Malo':
+                picoShort = 'M';
+                break;
+            case 'No Aplica':
+                picoShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Lampa"
+        let lampa = document.querySelector('input[name="lampa"]:checked').value;
+        let lampaShort = '';
+        switch (lampa) {
+            case 'Bueno':
+                lampaShort = 'B';
+                break;
+            case 'Malo':
+                lampaShort = 'M';
+                break;
+            case 'No Aplica':
+                lampaShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Cuñas"
+        let cuñas = document.querySelector('input[name="cuñas"]:checked').value;
+        let cuñasShort = '';
+        switch (cuñas) {
+            case 'Bueno':
+                cuñasShort = 'B';
+                break;
+            case 'Malo':
+                cuñasShort = 'M';
+                break;
+            case 'No Aplica':
+                cuñasShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Radio Portátil"
+        let radioPortatil = document.querySelector('input[name="radio_portatil"]:checked').value;
+        let radioPortatilShort = '';
+        switch (radioPortatil) {
+            case 'Bueno':
+                radioPortatilShort = 'B';
+                break;
+            case 'Malo':
+                radioPortatilShort = 'M';
+                break;
+            case 'No Aplica':
+                radioPortatilShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Kit antiderrame"
+        let kitAntiderrame = document.querySelector('input[name="kit_antiderrame"]:checked').value;
+        let kitAntiderrameShort = '';
+        switch (kitAntiderrame) {
+            case 'Bueno':
+                kitAntiderrameShort = 'B';
+                break;
+            case 'Malo':
+                kitAntiderrameShort = 'M';
+                break;
+            case 'No Aplica':
+                kitAntiderrameShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Cono de seguridad"
+        let conoSeguridad = document.querySelector('input[name="cono_seguridad"]:checked').value;
+        let conoSeguridadShort = '';
+        switch (conoSeguridad) {
+            case 'Bueno':
+                conoSeguridadShort = 'B';
+                break;
+            case 'Malo':
+                conoSeguridadShort = 'M';
+                break;
+            case 'No Aplica':
+                conoSeguridadShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Botiquín de primeros auxilios"
+        let botiquin = document.querySelector('input[name="botiquin"]:checked').value;
+        let botiquinShort = '';
+        switch (botiquin) {
+            case 'Bueno':
+                botiquinShort = 'B';
+                break;
+            case 'Malo':
+                botiquinShort = 'M';
+                break;
+            case 'No Aplica':
+                botiquinShort = 'NA';
+                break;
+        }
+
+        // Obtener la opción seleccionada de "Gata Hidráulica"
+        let gataHidraulica = document.querySelector('input[name="gata_hidraulica"]:checked').value;
+        let gataHidraulicaShort = '';
+        switch (gataHidraulica) {
+            case 'Bueno':
+                gataHidraulicaShort = 'B';
+                break;
+            case 'Malo':
+                gataHidraulicaShort = 'M';
+                break;
+            case 'No Aplica':
+                gataHidraulicaShort = 'NA';
+                break;
+        }
+
          
 
 
@@ -574,6 +788,23 @@ window.addEventListener('load', async () => {
             tuboEscapeShort,
             bateriaTerminalesShort,
             asientoShort,
+
+            extintorShort, 
+            juegoLlavesShort, 
+            fajaRemolcadoraShort, 
+            circulinaShort, 
+            trianguloSeguridadShort, 
+            cintaReflectivaShort, 
+            picoShort, 
+            lampaShort, 
+            cuñasShort, 
+            radioPortatilShort, 
+            kitAntiderrameShort, 
+            conoSeguridadShort, 
+            botiquinShort, 
+            gataHidraulicaShort,
+
+
 
             nombreJefe,
             dniJefe
@@ -624,6 +855,23 @@ async function generatePDF(
     tuboEscape,
     bateriaTerminales,
     asiento,
+
+    extintor, 
+    juegoLlaves, 
+    fajaRemolcadora, 
+    circulina, 
+    trianguloSeguridad, 
+    cintaReflectiva, 
+    pico, 
+    lampa, 
+    cuñas, 
+    radioPortatil, 
+    kitAntiderrame, 
+    conoSeguridad,
+    botiquin, 
+    gataHidraulica,
+
+
     nombreJefe,
     dniJefe
 ) {
@@ -715,47 +963,47 @@ async function generatePDF(
 
     // Cilindros de Articulación
     if (cilindrosArticulacion === 'B') {
-        pdf.text('B', 238, 287.5);
+        pdf.text('B', 238, 289);
     } else if (cilindrosArticulacion === 'M') {
-        pdf.text('M', 254, 287.5);
+        pdf.text('M', 254, 289);
     } else if (cilindrosArticulacion === 'NA') {
-        pdf.text('A', 271, 287.5);
+        pdf.text('A', 271, 289);
     }
 
     // Pala de Carga
     if (palaCarga === 'B') {
-        pdf.text('B', 238, 302.5);
+        pdf.text('B', 238, 303.5);
     } else if (palaCarga === 'M') {
-        pdf.text('M', 254, 302.5);
+        pdf.text('M', 254, 303.5);
     } else if (palaCarga === 'NA') {
-        pdf.text('A', 271, 302.5);
+        pdf.text('A', 271, 303.5);
     }
 
     // Comandos
     if (comandos === 'B') {
-        pdf.text('B', 238, 316);
+        pdf.text('B', 238, 319);
     } else if (comandos === 'M') {
-        pdf.text('M', 254, 316);
+        pdf.text('M', 254, 319);
     } else if (comandos === 'NA') {
-        pdf.text('A', 271, 316);
+        pdf.text('A', 271, 319);
     }
 
     // Pasadores de Cilindros
     if (pasadoresCilindros === 'B') {
-        pdf.text('B', 238, 331);
+        pdf.text('B', 238, 334);
     } else if (pasadoresCilindros === 'M') {
-        pdf.text('M', 254, 331);
+        pdf.text('M', 254, 334);
     } else if (pasadoresCilindros === 'NA') {
-        pdf.text('A', 271, 331);
+        pdf.text('A', 271, 334);
     }
 
     // Flexibles
     if (flexibles === 'B') {
-        pdf.text('B', 238, 345);
+        pdf.text('B', 238, 347.5);
     } else if (flexibles === 'M') {
-        pdf.text('M', 254, 345);
+        pdf.text('M', 254, 347.5);
     } else if (flexibles === 'NA') {
-        pdf.text('A', 271, 345);
+        pdf.text('A', 271, 347.5);
     }
 
     // Cañerías
@@ -825,29 +1073,29 @@ async function generatePDF(
 
     // Luces
     if (luces === 'B') {
-        pdf.text('B', 238, 459);
+        pdf.text('B', 238, 462);
     } else if (luces === 'M') {
-        pdf.text('M', 254, 459);
+        pdf.text('M', 254, 462);
     } else if (luces === 'NA') {
-        pdf.text('A', 271, 459);
+        pdf.text('A', 271, 462);
     }
 
     // Bocina
     if (bocina === 'B') {
-        pdf.text('B', 238, 474);
+        pdf.text('B', 238, 476);
     } else if (bocina === 'M') {
-        pdf.text('M', 254, 474);
+        pdf.text('M', 254, 476);
     } else if (bocina === 'NA') {
-        pdf.text('A', 271, 474);
+        pdf.text('A', 271, 476);
     }
 
     // Baliza
     if (baliza === 'B') {
-        pdf.text('B', 238, 489.2);
+        pdf.text('B', 238, 491);
     } else if (baliza === 'M') {
-        pdf.text('M', 254, 489.2);
+        pdf.text('M', 254, 491);
     } else if (baliza === 'NA') {
-        pdf.text('A', 271, 489.2);
+        pdf.text('A', 271, 491);
     }
 
     // Bloqueador de Sistema Hidráulico
@@ -861,47 +1109,47 @@ async function generatePDF(
 
     // Motor
     if (motor === 'B') {
-        pdf.text('B', 238, 519);
+        pdf.text('B', 238, 521);
     } else if (motor === 'M') {
-        pdf.text('M', 254, 519);
+        pdf.text('M', 254, 521);
     } else if (motor === 'NA') {
-        pdf.text('A', 271, 519);
+        pdf.text('A', 271, 521);
     }
 
     // Radiador
     if (radiador === 'B') {
-        pdf.text('B', 238, 533);
+        pdf.text('B', 238, 535);
     } else if (radiador === 'M') {
-        pdf.text('M', 254, 533);
+        pdf.text('M', 254, 535);
     } else if (radiador === 'NA') {
-        pdf.text('A', 271, 533);
+        pdf.text('A', 271, 535);
     }
 
     // Mangueras
     if (mangueras === 'B') {
-        pdf.text('B', 238, 547.2);
+        pdf.text('B', 238, 549);
     } else if (mangueras === 'M') {
-        pdf.text('M', 254, 547.2);
+        pdf.text('M', 254, 549);
     } else if (mangueras === 'NA') {
-        pdf.text('A', 271, 547.2);
+        pdf.text('A', 271, 549);
     }
 
     // Correas
     if (correas === 'B') {
-        pdf.text('B', 238, 561.4);
+        pdf.text('B', 238, 563);
     } else if (correas === 'M') {
-        pdf.text('M', 254, 561.4);
+        pdf.text('M', 254, 563);
     } else if (correas === 'NA') {
-        pdf.text('A', 271, 561.4);
+        pdf.text('A', 271, 563);
     }
 
     // Sistema Eléctrico
     if (sistemaElectrico === 'B') {
-        pdf.text('B', 238, 575.3);
+        pdf.text('B', 238, 577);
     } else if (sistemaElectrico === 'M') {
-        pdf.text('M', 254, 575.3);
+        pdf.text('M', 254, 577);
     } else if (sistemaElectrico === 'NA') {
-        pdf.text('A', 271, 575.3);
+        pdf.text('A', 271, 577);
     }
 
 //de aqui se va arriba
@@ -979,12 +1227,141 @@ async function generatePDF(
 
     // Asiento
     if (asiento === 'B') {
-        pdf.text('B', 475, 316);
+        pdf.text('B', 475, 318);
     } else if (asiento === 'M') {
-        pdf.text('M', 493, 316);
+        pdf.text('M', 493, 318);
     } else if (asiento === 'NA') {
-        pdf.text('A', 513, 316);
+        pdf.text('A', 513, 318);
     }
+
+
+    //completar
+    // Extintor 8kg minimo
+    if (extintor === 'B') {
+        pdf.text('B', 475, 349);
+    } else if (extintor === 'M') {
+        pdf.text('M', 493, 349);
+    } else if (extintor === 'NA') {
+        pdf.text('A', 513, 349);
+    }
+
+    // Juego de llaves
+    if (juegoLlaves === 'B') {
+        pdf.text('B', 475, 364);
+    } else if (juegoLlaves === 'M') {
+        pdf.text('M', 493, 364);
+    } else if (juegoLlaves === 'NA') {
+        pdf.text('A', 513, 364);
+    }
+
+    // Faja remolcadora
+    if (fajaRemolcadora === 'B') {
+        pdf.text('B', 475, 378);
+    } else if (fajaRemolcadora === 'M') {
+        pdf.text('M', 493, 378);
+    } else if (fajaRemolcadora === 'NA') {
+        pdf.text('A', 513, 378);
+    }
+
+    // Circulina
+    if (circulina === 'B') {
+        pdf.text('B', 475, 393);
+    } else if (circulina === 'M') {
+        pdf.text('M', 493, 393);
+    } else if (circulina === 'NA') {
+        pdf.text('A', 513, 393);
+    }
+
+    // Triángulo de Seguridad
+    if (trianguloSeguridad === 'B') {
+        pdf.text('B', 475, 407);
+    } else if (trianguloSeguridad === 'M') {
+        pdf.text('M', 493, 407);
+    } else if (trianguloSeguridad === 'NA') {
+        pdf.text('A', 513, 407);
+    }
+
+    // Cinta reflectiva
+    if (cintaReflectiva === 'B') {
+        pdf.text('B', 475, 422);
+    } else if (cintaReflectiva === 'M') {
+        pdf.text('M', 493, 422);
+    } else if (cintaReflectiva === 'NA') {
+        pdf.text('A', 513, 422);
+    }
+
+    // Pico
+    if (pico === 'B') {
+        pdf.text('B', 475, 436);
+    } else if (pico === 'M') {
+        pdf.text('M', 493, 436);
+    } else if (pico === 'NA') {
+        pdf.text('A', 513, 436);
+    }
+
+    // Lampa
+    if (lampa === 'B') {
+        pdf.text('B', 475, 450);
+    } else if (lampa === 'M') {
+        pdf.text('M', 493, 450);
+    } else if (lampa === 'NA') {
+        pdf.text('A', 513, 450);
+    }
+
+    // Cuñas
+    if (cuñas === 'B') {
+        pdf.text('B', 475, 465);
+    } else if (cuñas === 'M') {
+        pdf.text('M', 493, 465);
+    } else if (cuñas === 'NA') {
+        pdf.text('A', 513, 465);
+    }
+
+    // Radio Portátil
+    if (radioPortatil === 'B') {
+        pdf.text('B', 475, 479);
+    } else if (radioPortatil === 'M') {
+        pdf.text('M', 493, 479);
+    } else if (radioPortatil === 'NA') {
+        pdf.text('A', 513, 479);
+    }
+
+    // Kit antiderrame
+    if (kitAntiderrame === 'B') {
+        pdf.text('B', 475, 494);
+    } else if (kitAntiderrame === 'M') {
+        pdf.text('M', 493, 494);
+    } else if (kitAntiderrame === 'NA') {
+        pdf.text('A', 513, 494);
+    }
+
+    // Cono de seguridad
+    if (conoSeguridad === 'B') {
+        pdf.text('B', 475, 508);
+    } else if (conoSeguridad === 'M') {
+        pdf.text('M', 493, 508);
+    } else if (conoSeguridad === 'NA') {
+        pdf.text('A', 513, 508);
+    }
+
+    // Botiquín de primeros auxilios
+    if (botiquin === 'B') {
+        pdf.text('B', 475, 523);
+    } else if (botiquin === 'M') {
+        pdf.text('M', 493, 523);
+    } else if (botiquin === 'NA') {
+        pdf.text('A', 513, 523);
+    }
+
+    // Gata Hidráulica
+    if (gataHidraulica === 'B') {
+        pdf.text('B', 475, 538);
+    } else if (gataHidraulica === 'M') {
+        pdf.text('M', 493, 538);
+    } else if (gataHidraulica === 'NA') {
+        pdf.text('A', 513, 538);
+    }
+
 
 
     pdf.setFont("times", "italic"); // Cambia el tipo de fuente a Times y estilo a cursiva (italic)
